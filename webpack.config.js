@@ -3,7 +3,7 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  entry: './ex1/index.jsx',
+  entry: './src/index.jsx',
   output: {
   path: __dirname + '/public',
   filename: './app.js'
@@ -42,6 +42,8 @@ module.exports = {
       {
         test: /\.css$/,
         use: ExtractTextPlugin.extract({
+        // use: ['css-loader', 'sass-loader'],
+        // fallback: 'style-loader'
         fallback: 'style-loader',
         use: ['css-loader']
       })
