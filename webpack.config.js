@@ -3,14 +3,16 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const path = require('path');
 
 module.exports = {
-  entry: './src/index.jsx',
+  entry: './src/main/index.jsx',
   output: {
   path: __dirname + '/public',
-  filename: './app.js'
+  filename: './app.js',
+  publicPath: '/'
  },
  devServer: {
   port: 8080,
   contentBase: './public',
+  historyApiFallback: true,
  },
  resolve: {
   extensions: ['.js', '.jsx'],
@@ -26,7 +28,7 @@ module.exports = {
     jQuery: 'jquery',
     'window.jQuery': 'jquery'
   }),
-  new ExtractTextPlugin('app.css')
+  new ExtractTextPlugin('public/app.css')
  ],
  module: {
   rules: [
