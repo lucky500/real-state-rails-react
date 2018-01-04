@@ -1,11 +1,10 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import About from '../components/About/About';
 import Login from '../components/Login/Login';
 import Properties from '../components/Properties/Properties';
 
-export default props => (
-  <BrowserRouter>
+export default props => (  
     <div>
       <Switch>
         <Route path="/about" component={About} />
@@ -13,5 +12,5 @@ export default props => (
         <Route exact path="/" component={Properties} />
       </Switch>
     </div>
-  </BrowserRouter>
+  
 )
